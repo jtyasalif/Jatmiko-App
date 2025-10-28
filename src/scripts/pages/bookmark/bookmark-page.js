@@ -46,7 +46,7 @@ export default class BookmarkPage {
       this.populateBookmarkedReportsListEmpty();
       return;
     }
-
+    console.log('Bookmarked reports:', reports);
     const html = reports.reduce((accumulator, report) => {
       if (this.#map) {
         const coordinate = [report.lat, report.lon];

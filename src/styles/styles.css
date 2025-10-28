@@ -6,10 +6,10 @@
 }
 
 :root {
-  --primary-color: #d97706;
+  --primary-color: #065ad9;
   --primary-text-color: #ffffff;
-  --primary-hover-color: #b66200;
-  --primary-shadow-color: #d9770699;
+  --primary-hover-color: #4783dc;
+  --primary-shadow-color: #1f45df99;
 
   --secondary-color: #6c757d;
   --secondary-text-color: #ffffff;
@@ -524,7 +524,7 @@ header {
 .report-detail__header {
   padding-block: 80px;
   min-height: 600px;
-  background-image: url('../public/images/orange-background.png');
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -780,7 +780,7 @@ header {
 .new-report__header {
   padding-block: 70px;
   background-color: #d9770626;
-  background-image: url('../public/images/orange-background.png');
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;

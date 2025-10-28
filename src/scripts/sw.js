@@ -66,19 +66,18 @@ registerRoute(
   }),
 );
 
-// setelah awal mula
-
-const cacheName = 'calculator-cache-v1';
-const precachedResources = ['/', '/app.js', '/styles.css'];
-
-async function precache() {
-  const cache = await caches.open(cacheName);
-  return cache.addAll(precachedResources);
-}
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(precache());
-});
+// ✅ Caching OpenStreetMap
+registerRoute(
+  ({ url }) => url.origin === 'https://tile.openstreetmap.org',
+  new CacheFirst({
+    cacheName: 'osm-tiles',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  }),
+);
 
 // awal mula
 

@@ -6,7 +6,7 @@ import {
 } from '../../templates';
 import HomePresenter from './home-presenter';
 import Map from '../../utils/map';
-import * as CityCareAPI from '../../data/api';
+import * as AspalCareAPI from '../../data/api';
 
 export default class HomePage {
   #presenter = null;
@@ -22,7 +22,7 @@ export default class HomePage {
       </section>
 
       <section class="container">
-        <h1 class="section-title">Daftar Laporan Kerusakan</h1>
+        <h1 class="section-title">Daftar Kerusakan Aspal</h1>
 
         <div class="reports-list__container">
           <div id="reports-list"></div>
@@ -35,7 +35,7 @@ export default class HomePage {
   async afterRender() {
     this.#presenter = new HomePresenter({
       view: this,
-      model: CityCareAPI,
+      model: AspalCareAPI,
     });
 
     await this.#presenter.initialGalleryAndMap();

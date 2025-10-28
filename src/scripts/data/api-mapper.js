@@ -2,7 +2,7 @@ import Map from '../utils/map';
 
 export async function reportMapper(report) {
   // Ambil nama lokasi dari koordinat
-
+  console.log('Mapping report:', report);
   return {
     id: report.id,
     name: report.name,

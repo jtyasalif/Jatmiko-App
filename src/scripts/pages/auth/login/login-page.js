@@ -1,5 +1,5 @@
 import LoginPresenter from './login-presenter';
-import * as CityCareAPI from '../../../data/api';
+import * as AspalCareAPI from '../../../data/api';
 import * as AuthModel from '../../../utils/auth';
 
 export default class LoginPage {
@@ -41,7 +41,7 @@ export default class LoginPage {
   async afterRender() {
     this.#presenter = new LoginPresenter({
       view: this,
-      model: CityCareAPI,
+      model: AspalCareAPI,
       authModel: AuthModel,
     });
 

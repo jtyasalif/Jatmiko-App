@@ -101,34 +101,6 @@ export async function getReportById(id) {
   };
 }
 
-// export async function storeNewReport({
-//   title,
-//   damageLevel,
-//   description,
-//   evidenceImages,
-//   latitude,
-//   longitude,
-// }) {
-//   const accessToken = getAccessToken();
-//   if (!accessToken) {
-//     return { ok: false, message: 'Unauthorized. Please login first.' };
-//   }
-
-//   const formData = new FormData();
-//   formData.set('description', `${title} - ${description}`); // Dicoding API hanya punya "description"
-//   formData.set('lat', latitude);
-//   formData.set('lon', longitude);
-//   evidenceImages.forEach((image) => formData.append('photo', image)); // Dicoding API pakai field "photo"
-
-//   const fetchResponse = await fetch(ENDPOINTS.STORE_NEW_REPORT, {
-//     method: 'POST',
-//     headers: { Authorization: `Bearer ${accessToken}` },
-//     body: formData,
-//   });
-//   const json = await fetchResponse.json();
-
-//   return { ...json, ok: fetchResponse.ok };
-// }
 export async function storeNewReport({
   title,
   damageLevel,

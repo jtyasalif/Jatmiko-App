@@ -12,7 +12,7 @@ import { createCarousel } from '../../utils';
 import ReportDetailPresenter from './report-detail-presenter';
 import { parseActivePathname } from '../../routes/url-parser';
 import Map from '../../utils/map';
-import * as CityCareAPI from '../../data/api';
+import * as AspalCareAPI from '../../data/api';
 import Database from '../../data/database';
 
 export default class ReportDetailPage {
@@ -36,7 +36,7 @@ export default class ReportDetailPage {
   async afterRender() {
     this.#presenter = new ReportDetailPresenter(parseActivePathname().id, {
       view: this,
-      apiModel: CityCareAPI,
+      apiModel: AspalCareAPI,
       dbModel: Database,
     });
 
@@ -162,87 +162,4 @@ export default class ReportDetailPage {
   hideMapLoading() {
     document.getElementById('map-loading-container').innerHTML = '';
   }
-
-  // populateReportDetailComments(message, comments) {
-  //   if (comments.length <= 0) {
-  //     this.populateCommentsListEmpty();
-  //     return;
-  //   }
-
-  //   const html = comments.reduce(
-  //     (accumulator, comment) =>
-  //       accumulator.concat(
-  //         generateReportCommentItemTemplate({
-  //           photoUrlCommenter: comment.commenter.photoUrl,
-  //           nameCommenter: comment.commenter.name,
-  //           body: comment.body,
-  //         }),
-  //       ),
-  //     '',
-  //   );
-
-  //   document.getElementById('report-detail-comments-list').innerHTML = `
-  //     <div class="report-detail__comments-list">${html}</div>
-  //   `;
-  // }
-
-  // populateCommentsListEmpty() {
-  //   document.getElementById('report-detail-comments-list').innerHTML =
-  //     generateCommentsListEmptyTemplate();
-  // }
-
-  // populateCommentsListError(message) {
-  //   document.getElementById('report-detail-comments-list').innerHTML =
-  //     generateCommentsListErrorTemplate(message);
-  // }
-
-  // #setupForm() {
-  //   this.#form = document.getElementById('comments-list-form');
-  //   this.#form.addEventListener('submit', async (event) => {
-  //     event.preventDefault();
-
-  //     const data = {
-  //       body: this.#form.elements.namedItem('body').value,
-  //     };
-  //     await this.#presenter.postNewComment(data);
-  //   });
-  // }
-
-  // postNewCommentSuccessfully(message) {
-  //   console.log(message);
-
-  //   this.#presenter.getCommentsList();
-  //   this.clearForm();
-  // }
-
-  // postNewCommentFailed(message) {
-  //   alert(message);
-  // }
-
-  // clearForm() {
-  //   this.#form.reset();
-  // }
-
-  // showCommentsLoading() {
-  //   document.getElementById('comments-list-loading-container').innerHTML =
-  //     generateLoaderAbsoluteTemplate();
-  // }
-
-  // hideCommentsLoading() {
-  //   document.getElementById('comments-list-loading-container').innerHTML = '';
-  // }
-
-  // showSubmitLoadingButton() {
-  //   document.getElementById('submit-button-container').innerHTML = `
-  //     <button class="btn" type="submit" disabled>
-  //       <i class="fas fa-spinner loader-button"></i> Tanggapi
-  //     </button>
-  //   `;
-  // }
-
-  // hideSubmitLoadingButton() {
-  //   document.getElementById('submit-button-container').innerHTML = `
-  //     <button class="btn" type="submit">Tanggapi</button>
-  //   `;
-  // }
 }

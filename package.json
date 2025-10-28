@@ -1,7 +1,7 @@
 {
-  "name": "citycareapp",
+  "name": "AspalCare",
   "version": "1.0.0",
-  "description": "Aplikasi pelaporan kerusakan fasilitas umum yang memungkinkan warga Indonesia melaporkan masalah secara langsung kepada pemerintah kota. Dengan aplikasi ini, komunikasi antara warga dan pemerintah menjadi lebih efisien dalam menangani dan menindaklanjuti laporan kerusakan fasilitas umum.",
+  "description": "Aplikasi GoAspal merupakan aplikasi berbasis web yang dirancang untuk membantu pengguna dalam menemukan lokasi penjualan aspal di sekitar mereka yang rusak sehingga pemerintah dapat mengetahui lokasi dan kondisi aspal yang rusak sesuai dengan lokasi yang sudah data yang diupload oleh pengunjung",
   "scripts": {
     "build": "webpack --config ./webpack.prod.js",
     "start-dev": "webpack serve --config ./webpack.dev.js",
