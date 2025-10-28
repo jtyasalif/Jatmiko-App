@@ -81,15 +81,37 @@ registerRoute(
 
 // awal mula
 
+// self.addEventListener('push', (event) => {
+//   console.log('Service worker pushing...');
+
+//   async function chainPromise() {
+//     const data = await event.data.json();
+//     await self.registration.showNotification(data.title, {
+//       body: data.options.body,
+//     });
+//   }
+
+//   event.waitUntil(chainPromise());
+// });
+
 self.addEventListener('push', (event) => {
-  console.log('Service worker pushing...');
+  event.waitUntil(
+    (async () => {
+      let data;
 
-  async function chainPromise() {
-    const data = await event.data.json();
-    await self.registration.showNotification(data.title, {
-      body: data.options.body,
-    });
-  }
+      try {
+        data = event.data.json();
+      } catch {
+        data = {
+          title: 'Notifikasi',
+          options: { body: event.data.text() },
+        };
+      }
 
-  event.waitUntil(chainPromise());
+      const title = data.title || 'Aspal Care';
+      const options = data.options || { body: 'Ada notifikasi baru untuk kamu.' };
+
+      await self.registration.showNotification(title, options);
+    })(),
+  );
 });
